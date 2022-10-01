@@ -25,6 +25,6 @@ class PostLocalDataSource extends PostLocalDataSourceAC {
   void write({required List<PostLocalDTO> posts}) {
     databaseProvider.deleteAll<PostLocalDTO>();
     databaseProvider.write(objects: posts);
-    postSubject.onAdd(posts);
+    postSubject.add(posts);
   }
 }

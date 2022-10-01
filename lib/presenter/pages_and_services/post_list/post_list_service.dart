@@ -3,7 +3,7 @@ import 'package:rzagram/domain/use_cases/post/observe_posts_use_case.dart';
 import 'package:rzagram/domain/use_cases/post/sync_posts_use_case.dart';
 import 'package:rzagram/presenter/pages_and_services/base/base_service.dart';
 
-class PostListService extends BaseService {
+class PostListService extends BaseStatefulService<void> {
   List<PostEntity> posts = [];
 
   final SyncPostsUseCase _syncPostsUseCase;

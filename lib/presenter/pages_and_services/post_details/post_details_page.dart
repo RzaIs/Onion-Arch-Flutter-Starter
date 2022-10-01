@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:rzagram/presenter/pages_and_services/base/base_page.dart';
 import 'package:rzagram/presenter/pages_and_services/post_details/post_details_service.dart';
 
-class PostDetailsPage extends BaseStatelessPage<PostDetailsService> {
-  const PostDetailsPage({
+class PostDetailsPage extends BaseStatelessPage<void, PostDetailsService> {
+  PostDetailsPage({
     required super.navigationProvider,
     required super.service,
     super.key,

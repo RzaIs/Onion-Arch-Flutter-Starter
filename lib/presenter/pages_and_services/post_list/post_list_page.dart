@@ -3,7 +3,7 @@ import 'package:rzagram/domain/entities/post_entity.dart';
 import 'package:rzagram/presenter/pages_and_services/base/base_page.dart';
 import 'package:rzagram/presenter/pages_and_services/post_list/post_list_service.dart';
 
-class PostListPage extends BaseStatefulPage<PostListService> {
+class PostListPage extends BaseStatefulPage<void, PostListService> {
   const PostListPage({
     required super.navigationProvider,
     required super.service,
@@ -14,16 +14,16 @@ class PostListPage extends BaseStatefulPage<PostListService> {
   State<PostListPage> createState() => _PostListState();
 }
 
-class _PostListState extends State<PostListPage> {
+class _PostListState extends BaseState<void, PostListService, PostListPage> {
   @override
   void initState() {
-    super.initState();
     widget.service.observePosts().listen((posts) {
       setState(() {
         widget.service.posts = posts;
       });
     });
     widget.service.syncPosts();
+    super.initState();
   }
 
   @override
